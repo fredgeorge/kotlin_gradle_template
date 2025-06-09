@@ -1,0 +1,9 @@
+
+# Compiled class files
+**/out/
+**/build/
+.gradle/
+.kotlin/
+# IntelliJ
+.idea/
+*.iml
