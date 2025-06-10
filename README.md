@@ -1,58 +1,45 @@
-# Kotlin Gradle Template
+### kotlin_template
 
-This is an opinionated, minimal starter for a **multi-module Kotlin project** using the latest tool‑chain as of 2025-06-09:
+Copyright (c) 2025 by Fred George  
+author: Fred George  fredgeorge@acm.org  
+Licensed under the MIT License; see LICENSE file in root.
 
-* **JDK 24** via Gradle toolchains  
-* **Gradle 8.14.2** (wrapper generated automatically on first run)  
-* **Kotlin 2.1.21**  
-* **JUnit 5.12.2** via the Jupiter API & engine  
 
-## Structure
+## Starting template for Kotlin project using Gradle
 
-```
-.
-├── build.gradle.kts          # root build with shared config
-├── settings.gradle.kts       # declares modules
-├── gradle.properties
-├── engine/                   # production code
-│   └── src/main/kotlin/…
-└── tests/                    # test module depending on engine
-    └── src/test/kotlin/…
-```
+Kotlin is relatively easy to set up with IntelliJ IDEA. 
+Gradle is used for building and testing the project, and is a 
+prerequisite. Install if necessary.
+The following instructions are for installing the code 
+in IntelliJ IDEA by JetBrains. 
+Adapt as necessary for your environment.
 
-## Getting started
+Note: This implementation was set up to use:
 
-1. **Open in IntelliJ IDEA 2025.1+**  
-   *File ▶ Open…* and select the project root.  
-   The IDE will detect the Gradle wrapper and import the project.
+- IntelliJ 2025.1.1.1 (Ultimate Edition)
+- Kotlin 2.1.21
+- Java SDK 24 (Oracle)
+- Gradle 8.14.2
+- JUnit Jupiter 5.13.1 for testing
 
-2. **Run a build**  
-   ```bash
-   ./gradlew test
-   ```
-   Gradle will download JDK 24 automatically using the toolchain directive.
+Open the reference code:
 
-3. **Commit to GitHub**  
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial template"
-   gh repo create my-kotlin-template --public --source=. --remote=origin
-   git push -u origin main
-   ```
+- Download the source code from github.com/fredgeorge
+    - Clone, or pull and extract the zip
+- Open IntelliJ
+- Choose "Open" (it's a Gradle project)
+- Navigate to the reference code root, and enter
 
-## Common IntelliJ hiccups
+Source and test directories should already be tagged as such,
+with test directories in green.
 
-*If you see “multiple `FROM` statements” or duplicate class/resource errors while the same Gradle build works fine from the command line, it typically means the IDE is falling back to its own (older) bundled JDK or an embedded Gradle.*  
-Check **Settings ▶ Build, Execution, Deployment ▶ Build Tools ▶ Gradle**:
+Confirm that everything builds correctly (and necessary libraries exist).
+There is a sample class, Rectangle, with a corresponding
+test, RectangleTest. The test should run successfully
+from the Gradle __test__ task.
 
-* Use *Gradle JVM → JDK 24* (or “17+” if you prefer an LTS).  
-* Use the “*Gradle from Wrapper*” option.
+Update the following:
 
-Re‑import the project (the ⟳ icon in the Gradle tool‑window) after changing these values.
-
-## Updating versions
-
-* Gradle: update the `distributionUrl` in `gradle/wrapper/gradle-wrapper.properties` (will appear after the first wrapper task).  
-* Kotlin: change the plugin version in the root `build.gradle.kts`.  
-* JUnit: change the version in `tests/build.gradle.kts`.
+- In settings.gradle.kts, change the rootProject.name
+- In both engine and tests, choose your domain name for your code under kotlin directory
+- Consider renaming the <engine> project to your domain specific label
