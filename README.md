@@ -17,7 +17,7 @@ Adapt as necessary for your environment.
 Note: This implementation was set up to use:
 
 - IntelliJ 2025.3.1 (Ultimate Edition)
-- Kotlin 2.1.21
+- Kotlin 2.3.0
 - Java SDK 21 LTS (Oracle)
 - Gradle 8.14.2
 - JUnit Jupiter 5.13.1 for testing

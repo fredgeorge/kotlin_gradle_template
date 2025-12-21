@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 
 plugins {
     // Kotlin plugin will be applied in subprojects where needed
-    id("org.jetbrains.kotlin.jvm") version "2.1.21" apply false
+    id("org.jetbrains.kotlin.jvm") version "2.3.0" apply false
 }
 
 repositories {
