@@ -38,7 +38,13 @@ There is a sample class, Rectangle, with a corresponding
 test, RectangleTest. The test should run successfully
 from the Gradle __test__ task.
 
-Update the following:
+Several settings may need to be manually changed if using IntelliJ IDEA:
+
+- In File - Project Structure - Project Settings - Project, set SDK to 25 (or whatever you earlier SDK)
+- In File - Settings - Build, Execution, Deployment - Compiler - Kotlin Compiler, set Target JVM version to 21
+- In File - Settings - Build, Execution, Deployment - Build Tools - Gradle, set Gradle JVM to JAVA_HOME or explicitly
+
+Update the following: 
 
 - In settings.gradle.kts, change the rootProject.name
 - In both engine and tests, choose your domain name for your code under kotlin directory
