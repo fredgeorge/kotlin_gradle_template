@@ -20,7 +20,7 @@ Note: This implementation was set up to use:
 - Kotlin 2.3.0
 - Java SDK 21 LTS (Oracle)
 - Gradle 9.2.1
-- JUnit Jupiter 5.13.1 for testing
+- JUnit Jupiter 6.0.1 for testing
 
 Open the reference code:
 
