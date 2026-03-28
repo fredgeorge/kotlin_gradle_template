@@ -4,7 +4,6 @@ Copyright (c) 2025-26 by Fred George
 author: Fred George  fredgeorge@acm.org  
 Licensed under the MIT License; see LICENSE file in root.
 
-
 ## Starting template for Kotlin project using Gradle
 
 Kotlin is relatively easy to set up with IntelliJ IDEA. 
