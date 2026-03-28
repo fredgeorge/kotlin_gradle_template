@@ -16,7 +16,7 @@ Adapt as necessary for your environment.
 Note: This implementation was set up to use:
 
 - IntelliJ 2025.3.3 (Ultimate Edition)
-- Kotlin 2.3.0 (targeting Java 25 bytecode)
+- Kotlin 2.3.20 (targeting Java 25 bytecode)
 - Java SDK 25 LTS (Oracle)
 - Gradle 9.4.0
 - JUnit Jupiter 6.0.3 for testing
