@@ -8,7 +8,7 @@ Licensed under the MIT License; see LICENSE file in root.
 ## Starting template for Kotlin project using Gradle
 
 Kotlin is relatively easy to set up with IntelliJ IDEA. 
-Gradle is used for building and testing the project, and is a 
+Gradle is used for building and testing the project and is a 
 prerequisite. Install if necessary.
 The following instructions are for installing the code 
 in IntelliJ IDEA by JetBrains. 
@@ -16,11 +16,11 @@ Adapt as necessary for your environment.
 
 Note: This implementation was set up to use:
 
-- IntelliJ 2025.3.1.1 (Ultimate Edition)
-- Kotlin 2.3.0 (targeting Java 21 bytecode)
+- IntelliJ 2025.3.3 (Ultimate Edition)
+- Kotlin 2.3.0 (targeting Java 25 bytecode)
 - Java SDK 25 LTS (Oracle)
-- Gradle 9.2.1
-- JUnit Jupiter 6.0.1 for testing
+- Gradle 9.4.0
+- JUnit Jupiter 6.0.3 for testing
 
 Open the reference code:
 
