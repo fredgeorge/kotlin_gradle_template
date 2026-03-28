@@ -11,11 +11,6 @@ plugins {
     id("org.jetbrains.kotlin.jvm") apply false
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
 subprojects {
     // 1 – make sure the Kotlin-JVM plugin is applied
     apply(plugin = "org.jetbrains.kotlin.jvm")
