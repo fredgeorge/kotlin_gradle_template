@@ -11,4 +11,4 @@ pluginManagement {
 }
 
 rootProject.name = "kotlin-gradle-template"
-include("engine", "tests")
+include("engine", "tests", "persistence")
