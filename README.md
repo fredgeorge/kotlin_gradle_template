@@ -48,4 +48,4 @@ Update the following:
 
 - In settings.gradle.kts, change the rootProject.name
 - In both engine and tests, choose your domain name for your code under the kotlin directory
-- Consider renaming the <engine> project to your domain-specific label
+- Consider renaming the <engine>, <tests>, and <persistence package names to your domain-specific convention.
