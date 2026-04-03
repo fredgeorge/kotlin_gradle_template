@@ -6,8 +6,8 @@
 
 package com.nrkei.project.template
 
-import com.nrkei.project.issue.fromBase64
-import com.nrkei.project.issue.toBase64
+import com.nrkei.project.issue.Encoding.fromBase64
+import com.nrkei.project.issue.Encoding.toBase64
 import com.nrkei.project.template.Rectangle.RectangleDto
 
 // Understands rendering of a Rectangle in a transmittable format
