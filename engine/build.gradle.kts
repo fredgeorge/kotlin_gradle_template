@@ -14,12 +14,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(25))
-    }
-}
-
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {

@@ -21,3 +21,15 @@ allprojects {
         mavenCentral()
     }
 }
+
+val javaVersion = providers.gradleProperty("javaVersion").map(String::toInt).get()
+
+subprojects {
+    plugins.withId("java") {
+        extensions.configure<JavaPluginExtension> {
+            toolchain {
+                languageVersion.set(JavaLanguageVersion.of(javaVersion))
+            }
+        }
+    }
+}
