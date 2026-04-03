@@ -4,25 +4,17 @@
  * Licensed under the MIT License; see LICENSE file in root.
  */
 
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
-
 plugins {
-    // Kotlin plugin will be applied in subprojects where needed
-    id("org.jetbrains.kotlin.jvm") apply false
+    // Using aliases from the .toml
+    // IMPORTANT: Use all aliases or the false plugins below, not both!
+//    kotlin("jvm") version "2.3.20" apply false
+//    kotlin("plugin.serialization") version "2.3.20" apply false
 }
 
-subprojects {
-    // 1 – make sure the Kotlin-JVM plugin is applied
-    apply(plugin = "org.jetbrains.kotlin.jvm")
-
-    extensions.configure<KotlinJvmProjectExtension> {
-        jvmToolchain(25)
-    }
-
-    // Kotlin byte-code level: Match with jvmToolchain above
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_25)
-    }
+allprojects {
+    // Replace with your domain/project id
+    group = "com.nrkei.project.template"
+    version = "0.1.0"
 
     repositories {
         mavenLocal()

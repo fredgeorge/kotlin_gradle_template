@@ -4,7 +4,30 @@
  * Licensed under the MIT License; see LICENSE file in root.
  */
 
+plugins {
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.serialization)
+    `maven-publish`
+}
+
 dependencies {
-    // Define your public API here. Example:
-    // implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    implementation(libs.kotlinx.serialization.json)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(25))
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            artifactId = "template-engine"
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }

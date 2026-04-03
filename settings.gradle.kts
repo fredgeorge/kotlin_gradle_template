@@ -10,5 +10,6 @@ pluginManagement {
     }
 }
 
+// Change to your project name
 rootProject.name = "kotlin-gradle-template"
 include("engine", "tests", "persistence")

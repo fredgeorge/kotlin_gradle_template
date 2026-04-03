@@ -20,7 +20,7 @@ Note: This implementation was set up to use:
 - Java SDK 25 LTS (Oracle)
 - Gradle 9.4.1
 - JUnit Jupiter 6.0.3 for testing
-- Jackston 2.19.0 for JSON
+- Kotlin-serialization 1.8.1 for JSON
 
 Open the reference code:
 

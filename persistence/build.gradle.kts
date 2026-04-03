@@ -4,18 +4,41 @@
  * Licensed under the MIT License; see LICENSE file in root.
  */
 
+plugins {
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.serialization)
+    `maven-publish`
+}
+
 dependencies {
     implementation(project(":engine"))
 
+    implementation(libs.kotlinx.serialization.json)
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.junit.jupiter)
     testRuntimeOnly(libs.junit.platform.launcher)
-
-    implementation(platform(libs.jackson.bom))
-    implementation(libs.jackson.databind)
-    implementation(libs.jackson.kotlin)
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(25))
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            artifactId = "template-engine"
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }
