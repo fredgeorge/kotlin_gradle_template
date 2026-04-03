@@ -11,6 +11,7 @@ import kotlinx.serialization.modules.SerializersModule
 import java.util.*
 
 // Understands rendering objects to/from JSON or Base64
+// This is generalized for use in your specific project
 internal object Encoding {
     internal val defaultIssueSerializers = SerializersModule {
         // Register polymorphic structures here

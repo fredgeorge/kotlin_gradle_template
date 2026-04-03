@@ -10,7 +10,10 @@ import com.nrkei.project.issue.Encoding.fromBase64
 import com.nrkei.project.issue.Encoding.toBase64
 import com.nrkei.project.template.Rectangle.RectangleDto
 
-// Understands rendering of a Rectangle in a transmittable format
+// Understands persistence of a Rectangle by converting
+// it to a DTO, serializing that DTO as JSON, and
+// optionally wrapping the JSON in Base64 for
+// text-safe storage or transmission.
 
 internal fun Rectangle.toMemento() = toBase64(toDto())
 
