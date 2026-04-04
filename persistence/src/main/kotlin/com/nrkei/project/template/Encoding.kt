@@ -13,10 +13,14 @@ import java.util.*
 // Understands rendering objects to/from JSON or Base64
 // This is generalized for use in your specific project
 internal object Encoding {
+
+    // Used to register polymorphic structures
     internal val defaultIssueSerializers = SerializersModule {
-        // Register polymorphic structures here
+        // None by default
     }
 
+    // The default JSON with no polymorphic structures
+    // Build your own Json object with your own serializersModule
     internal val defaultJson = Json {
         serializersModule = defaultIssueSerializers
         prettyPrint = false
