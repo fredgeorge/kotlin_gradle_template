@@ -4,7 +4,7 @@
  * Licensed under the MIT License; see LICENSE file in root.
  */
 
-package com.nrkei.project.issue
+package com.nrkei.project.template
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.modules.SerializersModule
