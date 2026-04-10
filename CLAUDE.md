@@ -8,14 +8,14 @@ A Kotlin multi-project Gradle template demonstrating clean architectural separat
 
 ## Technology Stack
 
-| Tool | Version |
-|---|---|
-| Kotlin | 2.3.20 |
-| Java | 25 |
-| Gradle | 9.4.1 |
-| JUnit Jupiter | 6.0.3 |
-| kotlinx-serialization | 1.8.1 |
-| Target IDE | IntelliJ IDEA 2026.1 Ultimate |
+| Tool                  | Version                       |
+|-----------------------|-------------------------------|
+| Kotlin                | 2.3.20                        |
+| Java                  | 25                            |
+| Gradle                | 9.4.1                         |
+| JUnit Jupiter         | 6.0.3                         |
+| kotlinx-serialization | 1.8.1                         |
+| Target IDE            | IntelliJ IDEA 2026.1 Ultimate |
 
 ## Project Structure
 
@@ -38,7 +38,7 @@ kotlin_gradle_template/
 Pure domain logic. No test code, no serialization concerns. Publishes to mavenLocal as `template-engine`. Contains `Rectangle` as the sample domain class, with an inner `RectangleDto` (`@Serializable`) for DTO conversion.
 
 ### tests
-Dedicated module for behavior verification. Depends on `:engine`. Uses JUnit Jupiter. Kept separate from engine to enforce testing of public interfaces only.
+Dedicated module for behavior verification. Depends on `:engine`. Uses JUnit Jupiter. Kept separate from the engine to enforce testing of public interfaces only.
 
 ### persistence
 Serialization layer using the **Memento pattern**. Injects behavior via **extension functions** on domain classes and their companion objects — keeping the domain model clean. Depends on `:engine`. Publishes to mavenLocal.
@@ -61,7 +61,7 @@ Serialization layer using the **Memento pattern**. Injects behavior via **extens
 - **Kotlin code style:** `official` (enforced via `kotlin.code.style=official`).
 - **Incremental compilation:** Enabled.
 - **Repositories:** `mavenLocal()` and `mavenCentral()` — centrally managed in `settings.gradle.kts`.
-- **No buildSrc / convention plugins:** Cross-project config handled via `subprojects {}` in root build file.
+- **No buildSrc / convention plugins:** Cross-project config handled via `subprojects {}` in the root build file.
 
 ## Build File Layout (root build.gradle.kts)
 
@@ -82,7 +82,7 @@ subprojects {
 
 - JUnit Jupiter (JUnit 5) with explicit `useJUnitPlatform()` in test task config.
 - Backtick test method names (Kotlin style).
-- Test module is a sibling of engine, not nested inside it — deliberate design to test public API only.
+- Test module is a sibling of the engine, not nested inside it — deliberate design to test public API only.
 - Persistence module has its own tests for round-trip serialization verification.
 
 ## Domain Package

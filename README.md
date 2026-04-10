@@ -8,14 +8,14 @@ Licensed under the MIT License; see LICENSE file in root.
 
 This is a starting template for a Kotlin project using Gradle.
 Included is also support for persistence 
-using Kotlin-serialization.
+using _kotlin-serialization_ and the _Memento Pattern_.
 Code behavior is in the _engine_ package. 
 Tests are in the _tests_ package to encourage testing 
-of public behavior of the engine.
+only the public behavior of the engine.
 Similarly, the persistence layer is in the _persistence_ package.
 The persistence package stops with encoding and decoding the
 engine classes; interfaces to the outside world (databases,
-REST APIs, or event busses) should be in yet other packages.
+REST APIs, or event buses) should be in yet other packages.
 
 More on persistence is below.
 
@@ -71,10 +71,10 @@ Update the following:
 
 ## Persistence
 
-Peristence is separated from the domain model (engine).
-If imbedded in the model, complexity can compromise the
+Persistence is separated from the domain model (engine).
+If embedded in the model, complexity can compromise the
 clarity of the model design. To the maximum extent
-possible, peristence should be separated from the model.
+possible, persistence should be separated from the model.
 
 Persistence is handled by the Kotlin-serialization library. It 
 provides a convenient way to serialize and deserialize 
@@ -104,7 +104,7 @@ persistence package, including the injection of the creation and
 restoration functions. This helper class is solely 
 responsible for the format and content of the _memento_.
 
-The Encoding object allows for gneration and 
+The Encoding object allows for generation and 
 restoration in either JSON or Base64 formats. Base64 
 properly _hides_ the content of the memento from prying 
 eyes. _Polymorphism_ support exists with SerializersModule 
