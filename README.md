@@ -1,8 +1,23 @@
-### kotlin_template
+# kotlin_gradle_template
 
 Copyright (c) 2025–26 by Fred George  
 author: Fred George fredgeorge@acm.org  
 Licensed under the MIT License; see LICENSE file in root.
+
+## Purpose
+
+This is a starting template for a Kotlin project using Gradle.
+Included is also support for persistence 
+using Kotlin-serialization.
+Code behavior is in the _engine_ package. 
+Tests are in the _tests_ package to encourage testing 
+of public behavior of the engine.
+Similarly, the persistence layer is in the _persistence_ package.
+The persistence package stops with encoding and decoding the
+engine classes; interfaces to the outside world (databases,
+REST APIs, or event busses) should be in yet other packages.
+
+More on persistence is below.
 
 ## Starting template for a Kotlin project using Gradle
 
@@ -33,7 +48,11 @@ Open the reference code:
 Source and test directories should already be tagged as such,
 with test directories in green.
 
-Confirm that everything builds correctly (and the necessary libraries exist).
+Confirm that everything builds correctly (and the 
+necessary libraries exist). From a terminal window:
+```bash
+./gradlew clean build test
+```
 There is a sample class, Rectangle, with a corresponding
 test, RectangleTest. The test should run successfully
 from the Gradle __test__ task.

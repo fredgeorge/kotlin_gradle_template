@@ -28,7 +28,7 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
-            artifactId = "template-engine"
+            artifactId = "template-persistence"
         }
     }
     repositories {
