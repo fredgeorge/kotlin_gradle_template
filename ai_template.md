@@ -8,8 +8,6 @@ Given a new `<project_name>`, create `~/src/kotlin/<project_name>` as follows:
    excluding `.git`, `.gradle`, and `build` directories. Ignore files per .gitignore.
    Then separately copy `gradle/wrapper/gradle-wrapper.jar` — it is excluded by `.gitignore`
    (`*.jar`) but is required for `./gradlew` to run.
-   Also separately copy the `.idea/` directory — it is excluded by `.gitignore` but is
-   needed for IntelliJ project setup.
 2. In the new directory, run `git init` and add a remote:
    `git remote add origin https://github.com/fredgeorge/<project_name>.git`
 
