@@ -4,10 +4,6 @@
  * Licensed under the MIT License; see LICENSE file in root.
  */
 
-plugins {
-    alias(libs.plugins.kotlin.jvm)
-}
-
 dependencies {
     implementation(project(":engine"))
 }

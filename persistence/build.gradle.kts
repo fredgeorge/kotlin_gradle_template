@@ -5,24 +5,14 @@
  */
 
 plugins {
-    alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.serialization)
     `maven-publish`
 }
 
 dependencies {
     implementation(project(":engine"))
-    testImplementation(project(":test_support"))
-
     implementation(libs.kotlinx.serialization.json)
-    testImplementation(platform(libs.junit.bom))
-    testImplementation(libs.junit.jupiter)
-    testRuntimeOnly(libs.junit.platform.launcher)
-    testRuntimeOnly(libs.junit.jupiter.engine)
-}
-
-tasks.test {
-    useJUnitPlatform()
+    testImplementation(project(":test_support"))
 }
 
 publishing {
