@@ -13,4 +13,4 @@ dependencyResolutionManagement {
 
 // Change to your project name
 rootProject.name = "kotlin-gradle-template"
-include("engine", "tests", "persistence")
+include("engine", "test_support", "tests", "persistence")

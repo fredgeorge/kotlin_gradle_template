@@ -28,6 +28,7 @@ kotlin_gradle_template/
 │   ├── libs.versions.toml    # Version catalog (single source of truth for versions)
 │   └── wrapper/              # Gradle 9.4.1
 ├── engine/                   # Core domain logic
+├── test_support/             # Shared test fixtures
 ├── tests/                    # Behavior tests (separate module, not inside engine)
 └── persistence/              # Serialization layer (Memento pattern)
 ```
@@ -37,11 +38,14 @@ kotlin_gradle_template/
 ### engine
 Pure domain logic. No test code, no serialization concerns. Publishes to mavenLocal as `template-engine`. Contains `Rectangle` as the sample domain class, with an inner `RectangleDto` (`@Serializable`) for DTO conversion.
 
+### test_support
+Shared test fixtures consumed by `tests` and `persistence`. Contains sample objects like `TestShapes` (reference `Rectangle` instances) under `com.nrkei.project.template.util`. Depends on `:engine`. No publication; consumed via `testImplementation(project(":test_support"))`.
+
 ### tests
-Dedicated module for behavior verification. Depends on `:engine`. Uses JUnit Jupiter. Kept separate from the engine to enforce testing of public interfaces only.
+Dedicated module for behavior verification. Depends on `:engine` and `:test_support` (test scope). Uses JUnit Jupiter. Kept separate from the engine to enforce testing of public interfaces only.
 
 ### persistence
-Serialization layer using the **Memento pattern**. Injects behavior via **extension functions** on domain classes and their companion objects — keeping the domain model clean. Depends on `:engine`. Publishes to mavenLocal.
+Serialization layer using the **Memento pattern**. Injects behavior via **extension functions** on domain classes and their companion objects — keeping the domain model clean. Depends on `:engine` (and on `:test_support` for tests). Publishes to mavenLocal.
 
 ## Key Architectural Patterns
 
